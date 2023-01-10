@@ -1,0 +1,35 @@
+data(iris)
+
+head(iris)
+
+table(iris$Species)
+
+
+#check dimension of the data
+dim(iris)
+
+#check for correlation
+cor(iris[1:4])
+
+ 
+#cast to data frame
+iris_standardize <- as.data.frame(scale(scale(iris[1:4])))
+
+head(iris_standardize)
+
+# Covariance
+iris.mat <- as.matrix(iris_standardize)
+iris.mat
+
+cov.mat <- cor(iris_standardize)
+cov.mat
+
+#pca
+pca <- prcomp(iris_standardize,center=T,scale=T)
+summary(pca)
+
+library(ggfortify)b
+
+
+#MCA in R
+library(FactoMineR) 
